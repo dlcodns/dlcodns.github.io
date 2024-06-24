@@ -7,7 +7,7 @@ type: landing
 sections:
   - block: hero
     content:
-      title: 
+      title: |
         CHAEUN LEE
         Research Group
       image:
