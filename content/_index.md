@@ -1,13 +1,13 @@
 ---
 # Leave the homepage title empty to use the site title
 title: TO CHECK
-date: 2022-10-24
+date: 2024-06-24
 type: landing
 
 sections:
   - block: hero
     content:
-      title: |
+      title: 
         CHAEUN LEE
         Research Group
       image:
