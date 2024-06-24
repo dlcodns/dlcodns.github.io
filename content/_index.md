@@ -8,7 +8,7 @@ sections:
   - block: hero
     content:
       title: |
-        Wowchemy
+        CHAEUN LEE
         Research Group
       image:
         filename: welcome.jpg
