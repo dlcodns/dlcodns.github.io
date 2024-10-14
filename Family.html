@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<HEAD>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <TITLE>ChaeUn's F_word</TITLE>
+    <script src="./detail.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</HEAD>
+
+
+<BODY id="top" data-spy="scroll">
+    <div class="intro_bg">
+        <div class="header">
+            <div class="path">
+                <div class="home">
+                    <a href="./index.html" data-target="home">HOME</a>
+                </div>
+                <p>>&nbsp;&nbsp;</p>
+                <div class="F_word">
+                    <a href="./F_word.html" data-target="F_word">F_word</a>
+                </div>
+                <p>>&nbsp;&nbsp;</p>
+                <div class="Family">
+                    <a href="./Family.html" data-target="Family">Family</a>
+                </div>
+            </div>
+
+            <!-- nav 바 -->
+            <ul class="help">
+                <li class="help_box">
+                    <p>Letter size</p>
+                    <button class="icon_button"><i class="fa-solid fa-plus-minus"></i></button> <!-- 아이콘 버튼 -->
+                </li>
+                <div class="bar"></div>
+                <li class="help_box">
+                    <p>I want to speak the answer</p>
+                    <button class="icon_button"><i class="fa-solid fa-head-side-cough"></i></button> <!-- 아이콘 버튼 -->
+                </li>
+                <div class="bar"></div>
+                <li class="help_box">
+                    <p>Can't understand</p>
+                    <button class="icon_button"><i class="fa-solid fa-bell-concierge"></i></button> <!-- 아이콘 버튼 -->
+                </li>
+            </ul>
+            
+            
+            <!-- media 버전 nav 바 -->
+            <ul class="side_menu">
+                
+            </ul>
+            
+            
+        </div>
+        <div class="overlay"></div>
+
+        <!-- margin 용도: 고정된 nav바 만큼 빈 공간 차지하기 -->
+        <div class="margin"></div>
+        
+        <div class="family-container">
+            <h2>Q. Family can include all kinds of different people in your life.</h2>
+        
+            <div class="question">
+                <h3>Q-1. Who is part of your family?</h3>
+                <div class="family-drop-area" id="familyDropArea">
+                    <!-- 드롭된 가족 이미지가 여기에 표시됩니다 -->
+                </div>
+            </div>
+        
+            <div class="available-family">
+                <img src="./assets/F_word/Family/Father.png" alt="Father" class="family-image" draggable="true" id="father">
+                <img src="./assets/F_word/Family/Sister.png" alt="Sister" class="family-image" draggable="true" id="sister">
+                <img src="./assets/F_word/Family/Mother.png" alt="Mother" class="family-image" draggable="true" id="mother">
+                <img src="./assets/F_word/Family/Grandpa.png" alt="Grandpa" class="family-image" draggable="true" id="grandpa">
+                <img src="./assets/F_word/Family/Aunt.png" alt="Aunt" class="family-image" draggable="true" id="aunt">
+                <img src="./assets/F_word/Family/Brother.png" alt="Brother" class="family-image" draggable="true" id="brother">
+                <img src="./assets/F_word/Family/Friend.png" alt="Friend" class="family-image" draggable="true" id="friend">
+            </div>
+        
+            <div class="question">
+                <h3>Q-2. Who do you live with?</h3>
+                <textarea placeholder="Choose picture or write your answer."></textarea>
+            </div>
+        
+            <button class="next-button">Next</button>
+        </div>
+        
+        
+    </div>
+</BODY>
+</html>
