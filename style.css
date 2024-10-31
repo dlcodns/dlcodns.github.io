@@ -1264,31 +1264,99 @@ body::-webkit-scrollbar-track{
 /*Family*/
 .family-container {
     width: 80%;
+    display: flex;
+    flex-direction: column;
     margin: auto;
-    text-align: center;
+    font-family: 'Roboto Slab';
+    font-weight: 600;
+    font-size: clamp(28px, 3vw, 40px);
+}
+
+
+.family-container > p::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #e3e3e3;
+    margin: 10px auto 20px;
+}
+
+.question > p{
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+    font-size: clamp(20px, 2.5vw, 30px);
+}
+
+.six-to-four {
+    display: flex; /* 가로 배치 */
+    width: 100%; /* 부모 컨테이너의 전체 너비 사용 */
+    height: 30vh;
+    gap: 20px; /* 두 요소 사이의 간격 */
+    margin-bottom: 5vh;
+}
+
+
+.question > textarea {
+    flex: 6; /* 60% 너비 차지 */
+    border: 2px dashed #e3e3e3;
+    resize: none; /* 사용자가 크기 조절하지 못하도록 설정 (선택 사항) */
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1rem;
+    height: 100%; /* 부모 높이에 맞게 채움 */
+    box-sizing: border-box; /* 패딩과 경계선을 포함한 크기 계산 */
 }
 
 .family-drop-area {
-    border: 2px dashed #cccccc;
+    flex: 6; /* 전체의 60% 차지 */
+    border: 2px dashed #e3e3e3;
     min-height: 100px;
-    margin: 20px 0;
+    margin-top: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: top;
     flex-wrap: wrap;
     padding: 10px;
 }
 
+.family-drop-area > p{
+    font-family: 'Roboto Slab';
+    font-weight: 300;
+    font-size: clamp(10px, 2vw, 20px);
+    color: #a6a6a6;
+}
+
 .available-family {
+    flex: 4; /* 40% 너비 차지 */
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-wrap: wrap; /* 줄바꿈 활성화 */
+    overflow-x: auto; /* 가로 스크롤 활성화 */
+    gap: 10px; /* 이미지 사이의 간격 */
     margin-top: 20px;
+    padding-bottom: 10px; /* 스크롤바 여유 공간 */
+    height: auto; /* 부모 높이에 맞게 자동 조정 */
 }
 
 .family-image {
-    width: 80px;
+    width: calc(33.33% - 10px); /* 각 이미지를 3개씩 나열 (10px 간격 제외) */
+    max-width: 100px; /* 최대 너비를 100px로 제한 */
+    height: auto; /* 자동 높이 조정 */
+}
+
+.available-family::-webkit-scrollbar {
+    height: 8px; /* 스크롤바 높이 */
+}
+
+.available-family::-webkit-scrollbar-thumb {
+    background-color: #b3b3b3;
+    border-radius: 10px;
+}
+
+
+.family-image {
+    width: 45%; /* 두 개씩 배치 */
+    max-width: 80px;
     height: 80px;
     cursor: grab;
     transition: transform 0.2s;
@@ -1302,8 +1370,15 @@ body::-webkit-scrollbar-track{
     transform: scale(1.1);
 }
 
+.button-container {
+    display: flex;           /* Flexbox 사용 */
+    justify-content: flex-end; /* 오른쪽 정렬 */
+    margin-top: 20px;      /* 상단 여백 */
+    margin-bottom: 30px;   /* 하단 여백 */
+}
+
 .next-button {
-    margin-top: 20px;
+    width: 200px;
     padding: 10px 20px;
     background-color: #4da6ff;
     color: white;
@@ -1313,12 +1388,84 @@ body::-webkit-scrollbar-track{
     transition: background-color 0.3s;
 }
 
+
 .next-button:hover {
     background-color: #3399ff;
 }
 
 
 
+
+/*story.html*/
+
+.trigger{
+    display: none;
+}
+
+@media (max-width: 650px) {
+
+    
+    .help{
+        display: none;
+    }
+
+    .trigger {
+        display: block;
+        margin-right: 5vw;
+        margin-bottom: 0px;
+        position: relative;
+        width: 40px;
+        height: 34px;
+        cursor: pointer;
+        z-index: 4;
+    }
+
+    .trigger,
+    .trigger span {
+        display: inline-block;
+        transition: all .4s;
+        box-sizing: border-box;
+        
+        
+    }
+    
+    .trigger span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #000000;
+        border-radius: 4px;
+    }
+    
+    .trigger span:nth-of-type(1) {
+        top: 0;
+    }
+    
+    .trigger span:nth-of-type(2) {
+        top: 15px;
+    }
+    
+    .trigger span:nth-of-type(3) {
+        bottom: 0;
+    }
+    
+    /* type-01 */
+    /* 중앙 라인이 고정된 자리에서 투명하게 사라지며 상하라인 회전하며 엑스자 만들기 */
+    .trigger.active-1 span:nth-of-type(1) {
+        -webkit-transform: translateY (15px) rotate (-45deg);
+        transform: translateY(15px) rotate(-45deg);
+    }
+    
+    .trigger.active-1 span:nth-of-type(2) {
+        opacity: 0;
+    }
+    
+    .trigger.active-1 span:nth-of-type(3) {
+        -webkit-transform: translateY(-15px) rotate(45deg);
+        transform: translateY(-15px) rotate(45deg);
+    }
+}
 
 /*font 설정*/
 
